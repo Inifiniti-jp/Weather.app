@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		65401EB22D529230003FD511 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65401E992D52922E003FD511 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65401EA02D52922E003FD511;
+			remoteInfo = ChatGPTChallengeFebruary;
+		};
+		65401EBC2D529230003FD511 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65401E992D52922E003FD511 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65401EA02D52922E003FD511;
+			remoteInfo = ChatGPTChallengeFebruary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65401EA12D52922E003FD511 /* ChatGPTChallengeFebruary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPTChallengeFebruary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65401EB12D529230003FD511 /* ChatGPTChallengeFebruaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatGPTChallengeFebruaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65401EBB2D529230003FD511 /* ChatGPTChallengeFebruaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatGPTChallengeFebruaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		65401EA32D52922E003FD511 /* ChatGPTChallengeFebruary */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChatGPTChallengeFebruary;
+			sourceTree = "<group>";
+		};
+		65401EB42D529230003FD511 /* ChatGPTChallengeFebruaryTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChatGPTChallengeFebruaryTests;
+			sourceTree = "<group>";
+		};
+		65401EBE2D529230003FD511 /* ChatGPTChallengeFebruaryUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ChatGPTChallengeFebruaryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65401E9E2D52922E003FD511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65401EAE2D529230003FD511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65401EB82D529230003FD511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65401E982D52922E003FD511 = {
+			isa = PBXGroup;
+			children = (
+				65401EA32D52922E003FD511 /* ChatGPTChallengeFebruary */,
+				65401EB42D529230003FD511 /* ChatGPTChallengeFebruaryTests */,
+				65401EBE2D529230003FD511 /* ChatGPTChallengeFebruaryUITests */,
+				65401EA22D52922E003FD511 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65401EA22D52922E003FD511 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65401EA12D52922E003FD511 /* ChatGPTChallengeFebruary.app */,
+				65401EB12D529230003FD511 /* ChatGPTChallengeFebruaryTests.xctest */,
+				65401EBB2D529230003FD511 /* ChatGPTChallengeFebruaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65401EA02D52922E003FD511 /* ChatGPTChallengeFebruary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65401EC52D529230003FD511 /* Build configuration list for PBXNativeTarget "ChatGPTChallengeFebruary" */;
+			buildPhases = (
+				65401E9D2D52922E003FD511 /* Sources */,
+				65401E9E2D52922E003FD511 /* Frameworks */,
+				65401E9F2D52922E003FD511 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				65401EA32D52922E003FD511 /* ChatGPTChallengeFebruary */,
+			);
+			name = ChatGPTChallengeFebruary;
+			packageProductDependencies = (
+			);
+			productName = ChatGPTChallengeFebruary;
+			productReference = 65401EA12D52922E003FD511 /* ChatGPTChallengeFebruary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65401EB02D529230003FD511 /* ChatGPTChallengeFebruaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65401EC82D529230003FD511 /* Build configuration list for PBXNativeTarget "ChatGPTChallengeFebruaryTests" */;
+			buildPhases = (
+				65401EAD2D529230003FD511 /* Sources */,
+				65401EAE2D529230003FD511 /* Frameworks */,
+				65401EAF2D529230003FD511 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65401EB32D529230003FD511 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				65401EB42D529230003FD511 /* ChatGPTChallengeFebruaryTests */,
+			);
+			name = ChatGPTChallengeFebruaryTests;
+			packageProductDependencies = (
+			);
+			productName = ChatGPTChallengeFebruaryTests;
+			productReference = 65401EB12D529230003FD511 /* ChatGPTChallengeFebruaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65401EBA2D529230003FD511 /* ChatGPTChallengeFebruaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65401ECB2D529230003FD511 /* Build configuration list for PBXNativeTarget "ChatGPTChallengeFebruaryUITests" */;
+			buildPhases = (
+				65401EB72D529230003FD511 /* Sources */,
+				65401EB82D529230003FD511 /* Frameworks */,
+				65401EB92D529230003FD511 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65401EBD2D529230003FD511 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				65401EBE2D529230003FD511 /* ChatGPTChallengeFebruaryUITests */,
+			);
+			name = ChatGPTChallengeFebruaryUITests;
+			packageProductDependencies = (
+			);
+			productName = ChatGPTChallengeFebruaryUITests;
+			productReference = 65401EBB2D529230003FD511 /* ChatGPTChallengeFebruaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65401E992D52922E003FD511 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					65401EA02D52922E003FD511 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					65401EB02D529230003FD511 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 65401EA02D52922E003FD511;
+					};
+					65401EBA2D529230003FD511 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 65401EA02D52922E003FD511;
+					};
+				};
+			};
+			buildConfigurationList = 65401E9C2D52922E003FD511 /* Build configuration list for PBXProject "ChatGPTChallengeFebruary" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65401E982D52922E003FD511;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 65401EA22D52922E003FD511 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65401EA02D52922E003FD511 /* ChatGPTChallengeFebruary */,
+				65401EB02D529230003FD511 /* ChatGPTChallengeFebruaryTests */,
+				65401EBA2D529230003FD511 /* ChatGPTChallengeFebruaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65401E9F2D52922E003FD511 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65401EAF2D529230003FD511 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65401EB92D529230003FD511 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65401E9D2D52922E003FD511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65401EAD2D529230003FD511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65401EB72D529230003FD511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65401EB32D529230003FD511 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65401EA02D52922E003FD511 /* ChatGPTChallengeFebruary */;
+			targetProxy = 65401EB22D529230003FD511 /* PBXContainerItemProxy */;
+		};
+		65401EBD2D529230003FD511 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65401EA02D52922E003FD511 /* ChatGPTChallengeFebruary */;
+			targetProxy = 65401EBC2D529230003FD511 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		65401EC32D529230003FD511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65401EC42D529230003FD511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65401EC62D529230003FD511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTChallengeFebruary/Preview Content\"";
+				DEVELOPMENT_TEAM = 9G6T4SXN3H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.ChatGPTChallengeFebruary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65401EC72D529230003FD511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTChallengeFebruary/Preview Content\"";
+				DEVELOPMENT_TEAM = 9G6T4SXN3H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.ChatGPTChallengeFebruary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		65401EC92D529230003FD511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G6T4SXN3H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.ChatGPTChallengeFebruaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatGPTChallengeFebruary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChatGPTChallengeFebruary";
+			};
+			name = Debug;
+		};
+		65401ECA2D529230003FD511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G6T4SXN3H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.ChatGPTChallengeFebruaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChatGPTChallengeFebruary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChatGPTChallengeFebruary";
+			};
+			name = Release;
+		};
+		65401ECC2D529230003FD511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G6T4SXN3H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.ChatGPTChallengeFebruaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChatGPTChallengeFebruary;
+			};
+			name = Debug;
+		};
+		65401ECD2D529230003FD511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9G6T4SXN3H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.ChatGPTChallengeFebruaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ChatGPTChallengeFebruary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65401E9C2D52922E003FD511 /* Build configuration list for PBXProject "ChatGPTChallengeFebruary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65401EC32D529230003FD511 /* Debug */,
+				65401EC42D529230003FD511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65401EC52D529230003FD511 /* Build configuration list for PBXNativeTarget "ChatGPTChallengeFebruary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65401EC62D529230003FD511 /* Debug */,
+				65401EC72D529230003FD511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65401EC82D529230003FD511 /* Build configuration list for PBXNativeTarget "ChatGPTChallengeFebruaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65401EC92D529230003FD511 /* Debug */,
+				65401ECA2D529230003FD511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65401ECB2D529230003FD511 /* Build configuration list for PBXNativeTarget "ChatGPTChallengeFebruaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65401ECC2D529230003FD511 /* Debug */,
+				65401ECD2D529230003FD511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65401E992D52922E003FD511 /* Project object */;
+}

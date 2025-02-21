@@ -11,7 +11,9 @@ import SwiftUI
 struct ChatGPTChallengeFebruaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomePage(viewModel: WeatherAPIViewModel())
+            
         }
     }
 }
+

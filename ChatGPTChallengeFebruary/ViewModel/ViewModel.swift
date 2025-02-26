@@ -8,7 +8,6 @@ class WeatherAPIViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     @Published var weather: WeatherResponse? // Property for current weather data
-    @Published var forecast: ForecastResponse? // Property for forecast data
 
     
     @Published var savedCities: [SavedCity] = [] {
@@ -30,15 +29,6 @@ class WeatherAPIViewModel: ObservableObject {
                   })
     }
     
-    func fetchForecast(lat: Double, lon: Double) {
-            cancellable = weatherService.getForecast(for: lat, lon: lon)
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { _ in },
-                      receiveValue: { forecast in
-                          self.forecast = forecast
-                      })
-        }
-    
     func saveCurrentCity() {
         guard let weather = self.weather else { return }
         
@@ -57,7 +47,6 @@ class WeatherAPIViewModel: ObservableObject {
             windSpeed: weather.wind.speed,
             windDeg: weather.wind.deg,
             windGust: weather.wind.gust,
-            rainOneH: weather.rain?.oneH,
             cloudsAll: weather.clouds.all,
             dt: weather.dt,
             sys: weather.sys,
@@ -103,7 +92,6 @@ class WeatherAPIViewModel: ObservableObject {
                             windSpeed: updatedWeather.wind.speed,
                             windDeg: updatedWeather.wind.deg,
                             windGust: updatedWeather.wind.gust,
-                            rainOneH: updatedWeather.rain?.oneH,
                             cloudsAll: updatedWeather.clouds.all,
                             dt: updatedWeather.dt,
                             sys: updatedWeather.sys,
@@ -139,7 +127,7 @@ class WeatherAPIViewModel: ObservableObject {
     }
 }
 
-// MARK: - Complete model including all parameters of the API
+// MARK: - Complete model including all parameters from API calls
 
 struct SavedCity: Codable, Identifiable {
     let id: UUID
@@ -157,7 +145,6 @@ struct SavedCity: Codable, Identifiable {
     let windSpeed: Double
     let windDeg: Int
     let windGust: Double?
-    let rainOneH: Double?
     let cloudsAll: Int
     let dt: Int
     let sys: Sys
@@ -186,7 +173,6 @@ struct SavedCity: Codable, Identifiable {
          windSpeed: Double,
          windDeg: Int,
          windGust: Double?,
-         rainOneH: Double?,
          cloudsAll: Int,
          dt: Int,
          sys: Sys,
@@ -198,7 +184,9 @@ struct SavedCity: Codable, Identifiable {
          cod: Int,
          longitude: Double,
          latitude: Double
-    ) {
+    )
+    
+    {
          self.id = id
          self.name = name
          self.base = base
@@ -214,7 +202,6 @@ struct SavedCity: Codable, Identifiable {
          self.windSpeed = windSpeed
          self.windDeg = windDeg
          self.windGust = windGust
-         self.rainOneH = rainOneH
          self.cloudsAll = cloudsAll
          self.dt = dt
          self.sys = sys

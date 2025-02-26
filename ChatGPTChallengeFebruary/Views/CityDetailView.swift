@@ -22,6 +22,7 @@ struct CityDetailView: View {
     let cityTimezone: Int    // Timezone in seconds from UTC
     let weatherIcons = ["humidity", "aqi.low"]
     let cityClouds: Int
+    let cityWind: Double
     
     var onSave: (() -> Void)?
     
@@ -37,11 +38,7 @@ struct CityDetailView: View {
         // Considers day if between 6 AM and 6 PM in the city's local time
         return hour >= 6 && hour < 18
     }
-    
-    // Adjust text color based on whether it's day or night in the city
-    private var textColor: Color {
-        isCityDay ? .black : .white
-    }
+
     
     var body: some View {
         NavigationStack {
@@ -55,7 +52,12 @@ struct CityDetailView: View {
                         .transition(.opacity)
                 }
                 
+                SnowView()
+                    
+                
                 VStack(spacing: 20) {
+                    
+                    
                     HStack {
                         Image(systemName: "location.fill")
                             .resizable()
@@ -69,43 +71,44 @@ struct CityDetailView: View {
                     }
                     
                     VStack(spacing: -10) {
-                        Text("\(cityTemperature, specifier: "%.0f")°")
-                            .font(.system(size: 150, weight: .bold, design: .rounded))
+                        
+                            Text("\(cityTemperature, specifier: "%.0f")°")
+                                .font(.system(size: 150, weight: .bold, design: .rounded))
+                                
+                        
                         
                         Text("Feels like \(cityFeelsLike, specifier: "%.0f")°")
                             .font(.system(size: 20, weight: .medium, design: .rounded))
                     }
                     
                     ZStack {
-                        RoundedRectangle(cornerRadius: 100)
-                            .frame(height: 150)
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(height: 200)
                             .opacity(0.2)
                         
-                        HStack(alignment: .bottom) {
-                            VStack(spacing: 10) {
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack {
                                 Image(systemName: "aqi.low")
-                                    .font(.system(size: 40))
+                                Text("Pressure")
                                 Text("\(cityPressure) hPa")
-                                    .bold()
                             }
-                            .padding()
                             
-                            VStack(spacing: 10) {
-                                Image(systemName: "humidity")
-                                    .font(.system(size: 40))
-                                Text("\(cityHumidity, specifier: "%.0f")%")
-                                    .bold()
-                            }
-                            .padding()
-                            
-                            VStack(spacing: 10) {
+                            HStack {
                                 Image(systemName: "cloud")
-                                    .font(.system(size: 40))
-                                Text("\(cityClouds, specifier: "%.0f")%")
-                                    .bold()
-
+                                Text("Clouds")
+                                Text("\(cityClouds) %")
                             }
-                            .padding()
+                            
+                            HStack {
+                                Image(systemName: "humidity")
+                                Text("Humidity")
+                                Text("\(cityHumidity) %")
+                            }
+                            HStack {
+                                Image(systemName: "wind")
+                                Text("Wind Speed")
+                                Text("\(cityWind, specifier: "%.0f") m/s")
+                            }
                         }
                     }
                     
@@ -122,11 +125,12 @@ struct CityDetailView: View {
                         Text("\(cityHighTemperature, specifier: "%.0f")°")
                             .font(.system(size: 30))
                     }
+                    
 
                     Spacer()
                 }
                 .padding()
-                .foregroundColor(textColor)
+                .foregroundColor(.white)
             }
             .ignoresSafeArea()
             .toolbar {
@@ -146,6 +150,7 @@ struct CityDetailView: View {
         // Updates currentDate every minute to trigger recomputation of isCityDay
         .onReceive(Timer.publish(every: 60, on: .main, in: .common).autoconnect()) { _ in
             currentDate = Date()
+            
         }
     }
 }
@@ -164,6 +169,7 @@ struct CityDetailView: View {
         cityLatitude: 50.0880,
         cityTimezone: 7200,
         cityClouds: 20,
+        cityWind: 20,
         onSave: nil
     )
 }

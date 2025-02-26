@@ -17,31 +17,41 @@ struct HomePage: View {
     
     var body: some View {
         ZStack {
-            NightTimeBackground()
-                .edgesIgnoringSafeArea(.all)
+            LinearGradient(
+                gradient: Gradient(colors: [Color.black, Color.blue.opacity(0.8)]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             VStack {
                 Text("Weather")
                     .font(.largeTitle.weight(.semibold))
                     .foregroundStyle(.white)
                     .padding()
                 
-                HStack {
-                    TextField("\(Image(systemName: "magnifyingglass")) Search for a city", text: $searchCity)
-                        .textFieldStyle(.roundedBorder)
+                    TextField(text: $searchCity) {
+                            Text("Search for a city")
+                                .foregroundStyle(.black)
+                    }
+                        .padding(10)
+                        .foregroundStyle(.black)
+                        .background(Color.white)
+                        .cornerRadius(10)
                         .submitLabel(.search)
+                        .padding(.horizontal)
                         .onSubmit {
-                            // Ensures that the search field is not empty.
+                            // Ensures that the search field is not empty, and if it is, an error is thrown.
                             if searchCity.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                                 errorMessage = "Please enter a city name."
                                 showError = true
                             } else {
                                 viewModel.fetchWeather(city: searchCity)
                                 isSheetPresented = true
+                                
+                                // Clears the searchfield of all characters when the city is saved
                                 searchCity = ""
                             }
-                        }
                 }
-                .padding()
                 
                 List {
                     ForEach(viewModel.savedCities) { city in
@@ -52,7 +62,7 @@ struct HomePage: View {
                                          cityTemperature: city.temperature,
                                          cityLowTemperature: city.tempMin,
                                          cityHighTemperature: city.tempMax,
-                                         cityCurrentWeather: city.weatherIcon)
+                                         cityCurrentWeather: city.weatherMain, cityTimezone: city.timezone)
                         }
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
@@ -63,6 +73,7 @@ struct HomePage: View {
                 .scrollIndicators(.hidden)
                 .scrollContentBackground(.hidden)
             }
+            // Updates all data every 120 seconds. 
             .onReceive(Timer.publish(every: 120, on: .main, in: .common).autoconnect()) { _ in
                 viewModel.refreshSavedCitiesWeather()
             }
@@ -85,6 +96,7 @@ struct HomePage: View {
                                     cityLatitude: weather.coord.lat,
                                     cityTimezone: weather.timezone,
                                     cityClouds: weather.clouds.all,
+                                    cityWind: weather.wind.speed,
                                     onSave: {
                                         viewModel.saveCurrentCity()
                                         isSheetPresented = false
@@ -103,7 +115,8 @@ struct HomePage: View {
                                     cityLongitude: weather.coord.lon,
                                     cityLatitude: weather.coord.lat,
                                     cityTimezone: weather.timezone,
-                                    cityClouds: weather.clouds.all
+                                    cityClouds: weather.clouds.all,
+                                    cityWind: weather.wind.speed
                                     
                                 )
                             }
@@ -127,7 +140,8 @@ struct HomePage: View {
                     cityLongitude: city.longitude,
                     cityLatitude: city.latitude,
                     cityTimezone: city.timezone,
-                    cityClouds: city.cloudsAll
+                    cityClouds: city.cloudsAll,
+                    cityWind: city.windSpeed
                     
                 )
             }

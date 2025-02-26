@@ -13,26 +13,53 @@ struct ListItemView: View {
     let cityLowTemperature: Double
     let cityHighTemperature: Double
     let cityCurrentWeather: String
+    let cityTimezone: Int
+    
+    @ObservedObject private var viewModel = WeatherAPIViewModel()
+    
+    // A dummy state to force a view update
+    @State private var currentDate = Date()
+    
+    // Computes the city's local time based on the timezone offset
+    var isCityDay: Bool {
+        let cityLocalTime = currentDate.addingTimeInterval(TimeInterval(cityTimezone))
+        let hour = Calendar.current.component(.hour, from: cityLocalTime)
+        // Considers day if between 6 AM and 6 PM in the city's local time
+        return hour >= 6 && hour < 18
+    }
     
     var body: some View {
+
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .foregroundStyle(.blue)
-                .frame(width: 380, height: 130)
+                .overlay(content: {
+                    if isCityDay {
+                        DayTimeBackground()
+                            .transition(.opacity)
+                            .clipped()
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    } else {
+                        NightTimeBackground()
+                            .transition(.opacity)
+                            .clipped()
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
+                    
+                        
+                })
+                .frame(width: 400, height: 130)
                 .padding(.horizontal, 10)
                 .padding(.vertical, -5)
             
             HStack {
                 VStack(alignment: .leading) {
                     Text(cityName)
-                        .foregroundStyle(.white)
                         .font(.title)
                         
                     
-                    Image(systemName: cityCurrentWeather)
-                        .font(.system(size: 40))
-                        .foregroundStyle(.white)
-                        .padding(.top, 1)
+                    Text(cityCurrentWeather)
+                        .font(.caption)
+                    
                 }
                 .padding(.leading, 30)
                 
@@ -40,21 +67,24 @@ struct ListItemView: View {
                 
                 VStack(alignment: .center) {
                     Text("\(cityTemperature, specifier: "%.0f")°")
-                        .foregroundStyle(.white)
                         .font(.system(size: 50, weight: .light))
                     
                     HStack {
                         Text("L: \(cityLowTemperature, specifier: "%.0f")°")
                         Text("H: \(cityHighTemperature, specifier: "%.0f")°")
                     }
-                    .foregroundStyle(.white)
                 }
                 .padding(.trailing, 30)
             }
         }
+        .foregroundStyle(.white)
     }
 }
 
+//extension ListItemView {
+//    var switchBackground
+//}
+
 #Preview {
-    ListItemView(cityName: "Prague", cityTemperature: 1, cityLowTemperature: 1, cityHighTemperature: 1, cityCurrentWeather: "cloud")
+    ListItemView(cityName: "Prague", cityTemperature: 1, cityLowTemperature: 1, cityHighTemperature: 1, cityCurrentWeather: "cloud", cityTimezone: 7600)
 }

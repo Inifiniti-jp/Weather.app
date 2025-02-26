@@ -7,31 +7,6 @@
 
 import Foundation
 
-// Extension that changes a weather icon based on received string from the API
-
-extension WeatherCondition {
-    var currentWeatherIcon: String {
-        switch self.main {
-        case "Clear":
-            return "sun.min"
-        case "Clouds":
-            return "cloud"
-        case "Rain":
-            return "cloud.rain"
-        case "Drizzle":
-            return "cloud.drizzle"
-        case "Thunderstorm":
-            return "cloud.bolt"
-        case "Snow":
-            return "cloud.snow"
-        case "Mist":
-            return "cloud.fog"
-        default:
-            return "Could not fetch weather!"
-        }
-    }
-}
-
 // Rule of thumb for fetching data: keep the let names as they are described in JSON, otherwise data won't be fetched. 
 
 struct WeatherResponse: Codable {
@@ -41,7 +16,6 @@ let coord: Coordinates
     let main: WeatherMain
     let visibility: Int
     let wind: Wind
-    let rain: Rain?
     let clouds: Clouds
     let dt: Int
     let sys: Sys
@@ -50,6 +24,7 @@ let coord: Coordinates
     let name: String
     let cod: Int
 }
+
 struct Coordinates: Codable {
     let lon: Double
     let lat: Double
@@ -75,13 +50,7 @@ struct Wind: Codable {
     let deg: Int
     let gust: Double?
 }
-struct Rain: Codable {
-    let oneH: Double?
-    
-    private enum CodingKeys: String, CodingKey {
-        case oneH = "1h"
-    }
-}
+
 struct Clouds: Codable {
     let all: Int
 }
@@ -93,15 +62,7 @@ struct Sys: Codable {
     let sunset: Int
 }
 
-struct ForecastResponse: Codable {
-    let hourly: [HourlyForecast]
-}
 
-struct HourlyForecast: Codable {
-    let dt: Int
-    let temp: Double
-    let weather: [WeatherCondition]
-}
 
 
 

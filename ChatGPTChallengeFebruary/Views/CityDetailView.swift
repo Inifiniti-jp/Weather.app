@@ -20,7 +20,6 @@ struct CityDetailView: View {
     let cityLongitude: Double
     let cityLatitude: Double
     let cityTimezone: Int    // Timezone in seconds from UTC
-    let weatherIcons = ["humidity", "aqi.low"]
     let cityClouds: Int
     let cityWind: Double
     
@@ -43,6 +42,8 @@ struct CityDetailView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                
+                
                 // Switch background based on the city's local time
                 if isCityDay {
                     DayTimeBackground()
@@ -52,11 +53,35 @@ struct CityDetailView: View {
                         .transition(.opacity)
                 }
                 
-                SnowView()
-                    
+                switch cityCurrentWeather.trimmingCharacters(in: .whitespacesAndNewlines) {
+                case "Clouds":
+                    CloudView()
+                        .frame(width: UIScreen.main.bounds.width)
+                case "Rain":
+                    RainView()
+                case "Drizzle":
+                    DrizzleView()
+                case "Thunderstorm":
+                    ThunderStormView()
+                        .frame(width: UIScreen.main.bounds.width)
+                case "Snow":
+                    SnowView()
+                case "Mist", "Fog":
+                    MistView()
+                        .frame(width: UIScreen.main.bounds.width)
+                default:
+                    if isCityDay {
+                        ClearDayView()
+                            .transition(.opacity)
+                    } else {
+                        ClearNightView()
+                            .transition(.opacity)
+                    }
+                }
+                
+                
                 
                 VStack(spacing: 20) {
-                    
                     
                     HStack {
                         Image(systemName: "location.fill")
@@ -70,15 +95,27 @@ struct CityDetailView: View {
                             .padding(.top)
                     }
                     
-                    VStack(spacing: -10) {
+                    VStack(spacing: 10) {
                         
-                            Text("\(cityTemperature, specifier: "%.0f")°")
+                        Text("\(cityTemperature, specifier: "%.0f")°")
                                 .font(.system(size: 150, weight: .bold, design: .rounded))
-                                
-                        
-                        
-                        Text("Feels like \(cityFeelsLike, specifier: "%.0f")°")
-                            .font(.system(size: 20, weight: .medium, design: .rounded))
+                            
+                            Text("Feels like \(cityFeelsLike, specifier: "%.0f")°")
+                                .font(.system(size: 20, weight: .medium, design: .rounded))
+                        HStack {
+                            
+                            Image(systemName: "arrow.down")
+                                .bold()
+                                .font(.system(size: 30))
+                            Text("\(cityLowTemperature, specifier: "%.0f")°")
+                                .font(.system(size: 30))
+                            
+                            Image(systemName: "arrow.up")
+                                .bold()
+                                .font(.system(size: 30))
+                            Text("\(cityHighTemperature, specifier: "%.0f")°")
+                                .font(.system(size: 30))
+                        }
                     }
                     
                     ZStack {
@@ -111,21 +148,6 @@ struct CityDetailView: View {
                             }
                         }
                     }
-                    
-                    HStack {
-                        Image(systemName: "arrow.down")
-                            .bold()
-                            .font(.system(size: 30))
-                        Text("\(cityLowTemperature, specifier: "%.0f")°")
-                            .font(.system(size: 30))
-                        
-                        Image(systemName: "arrow.up")
-                            .bold()
-                            .font(.system(size: 30))
-                        Text("\(cityHighTemperature, specifier: "%.0f")°")
-                            .font(.system(size: 30))
-                    }
-                    
 
                     Spacer()
                 }
@@ -155,6 +177,8 @@ struct CityDetailView: View {
     }
 }
 
+
+
 #Preview {
     CityDetailView(
         cityName: "Prague",
@@ -162,7 +186,7 @@ struct CityDetailView: View {
         cityFeelsLike: 10,
         cityLowTemperature: 5,
         cityHighTemperature: 15,
-        cityCurrentWeather: "sun.min",
+        cityCurrentWeather: "Rain",
         cityPressure: 1013,
         cityHumidity: 75,
         cityLongitude: 14.4208,
@@ -173,3 +197,5 @@ struct CityDetailView: View {
         onSave: nil
     )
 }
+
+

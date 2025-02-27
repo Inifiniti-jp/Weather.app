@@ -80,7 +80,8 @@ struct HomePage: View {
             // Sheet that shows the searched city's weather and conditionally displays an "Add" button, if the city hasn't been saved earlier.
             .sheet(isPresented: $isSheetPresented) {
                 VStack {
-                    if let weather = viewModel.weather, let condition = weather.weather.first {
+                    if let weather = viewModel.weather {
+                        
                         ZStack {
                             if !viewModel.isCurrentCitySaved {
                                 CityDetailView(
@@ -89,7 +90,7 @@ struct HomePage: View {
                                     cityFeelsLike: weather.main.feels_like,
                                     cityLowTemperature: weather.main.temp_min,
                                     cityHighTemperature: weather.main.temp_max,
-                                    cityCurrentWeather: condition.currentWeatherIcon,
+                                    cityCurrentWeather: weather.weather.first?.main ?? "Unknown",
                                     cityPressure: weather.main.pressure,
                                     cityHumidity: weather.main.humidity,
                                     cityLongitude: weather.coord.lon,
@@ -109,7 +110,7 @@ struct HomePage: View {
                                     cityFeelsLike: weather.main.feels_like,
                                     cityLowTemperature: weather.main.temp_min,
                                     cityHighTemperature: weather.main.temp_max,
-                                    cityCurrentWeather: condition.currentWeatherIcon,
+                                    cityCurrentWeather: weather.weather.first?.main ?? "Unknown",
                                     cityPressure: weather.main.pressure,
                                     cityHumidity: weather.main.humidity,
                                     cityLongitude: weather.coord.lon,
@@ -117,8 +118,8 @@ struct HomePage: View {
                                     cityTimezone: weather.timezone,
                                     cityClouds: weather.clouds.all,
                                     cityWind: weather.wind.speed
-                                    
                                 )
+                                
                             }
                         }
                     }
@@ -134,7 +135,7 @@ struct HomePage: View {
                     cityFeelsLike: city.feelsLike,
                     cityLowTemperature: city.tempMin,
                     cityHighTemperature: city.tempMax,
-                    cityCurrentWeather: city.weatherIcon,
+                    cityCurrentWeather: city.weatherMain,
                     cityPressure: city.pressure,
                     cityHumidity: city.humidity,
                     cityLongitude: city.longitude,
@@ -155,6 +156,9 @@ struct HomePage: View {
     }
 }
 
+
 #Preview {
     HomePage(viewModel: WeatherAPIViewModel())
 }
+
+

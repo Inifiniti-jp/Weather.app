@@ -44,10 +44,8 @@ struct ListItemView: View {
                             .clipped()
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
-                    
-                        
                 })
-                .frame(width: 400, height: 130)
+                .frame(width: UIScreen.main.bounds.width - 20, height: 130)
                 .padding(.horizontal, 10)
                 .padding(.vertical, -5)
             
@@ -86,5 +84,5 @@ struct ListItemView: View {
 //}
 
 #Preview {
-    ListItemView(cityName: "Prague", cityTemperature: 1, cityLowTemperature: 1, cityHighTemperature: 1, cityCurrentWeather: "cloud", cityTimezone: 7600)
+    ListItemView(cityName: "Prague", cityTemperature: 1, cityLowTemperature: 1, cityHighTemperature: 1, cityCurrentWeather: "Clouds", cityTimezone: 7600)
 }

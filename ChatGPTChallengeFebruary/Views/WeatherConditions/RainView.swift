@@ -1,24 +1,22 @@
 import SwiftUI
 
-struct DrizzleView: View {
-    @State private var rainDrops = Array(0..<15) // Number of raindrops
+struct RainView: View {
+    @State private var rainDrops = Array(0..<30) // Number of raindrops
 
     var body: some View {
         ZStack {
-            ForEach(rainDrops, id: \.self) { _ in
-                Raindrops()
+            ForEach(rainDrops, id: \.self) { raindrop in
+                Raindrop()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.clear) // Keep background transparent
-        .offset(y: -430)
+        .ignoresSafeArea()
     }
 }
-    
 
 // MARK: - Single Raindrop
-struct Raindrops: View {
-    @State private var dropOffset: CGFloat = -100
+struct Raindrop: View {
+    @State private var dropOffset: CGFloat = -500
     private let dropSize: CGFloat = CGFloat.random(in: 4...8) // Random drop size
     private let fallDuration: Double = Double.random(in: 0.2...0.5) // Varying fall speed
     private let xOffset: CGFloat = CGFloat.random(in: -180...180) // Random horizontal position
@@ -34,17 +32,17 @@ struct Raindrops: View {
                         .repeatForever(autoreverses: false)
                         .delay(Double.random(in: 0...1)) // Stagger start time
                 ) {
-                    dropOffset = 300
+                    dropOffset = 500
                 }
             }
     }
+        
 }
 
 // MARK: - Preview
-struct DrizzleView_Previews: PreviewProvider {
+struct RainView_Previews: PreviewProvider {
     static var previews: some View {
-        RainDropView()
-            .previewLayout(.sizeThatFits)
-            .background(Color.black.opacity(0.2)) // To make raindrops visible
+        RainView()
+            .background(Color.black) // To make raindrops visible
     }
 }

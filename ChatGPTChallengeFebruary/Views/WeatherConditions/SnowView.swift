@@ -6,18 +6,18 @@ struct SnowView: View {
     var body: some View {
         ZStack {
             ForEach(snowDrops, id: \.self) { _ in
-                SnowDrop()
+                SnowFlake()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.clear) // Keep background transparent
-        .offset(y: -430)
+        .ignoresSafeArea()
+        
     }
 }
 
 // MARK: - Single Raindrop
-struct SnowDrop: View {
-    @State private var dropOffset: CGFloat = -100
+struct SnowFlake: View {
+    @State private var dropOffset: CGFloat = -500
     private let dropSize: CGFloat = CGFloat.random(in: 4...8) // Random drop size
     private let fallDuration: Double = Double.random(in: 3.0...5.0) // Varying fall speed
     private let xOffset: CGFloat = CGFloat.random(in: -180...180) // Random horizontal position
@@ -31,9 +31,9 @@ struct SnowDrop: View {
                 withAnimation(
                     Animation.linear(duration: fallDuration)
                         .repeatForever(autoreverses: false)
-                        .delay(Double.random(in: 0...1)) // Stagger start time
+//                        .delay(Double.random(in: 0...1)) // Stagger start time
                 ) {
-                    dropOffset = 300
+                    dropOffset = 500
                 }
             }
     }
@@ -44,6 +44,6 @@ struct SnowView_Previews: PreviewProvider {
     static var previews: some View {
         SnowView()
             .previewLayout(.sizeThatFits)
-            .background(Color.black.opacity(0.2)) // To make raindrops visible
+            .background(Color.black) // To make snowflakes visible
     }
 }
